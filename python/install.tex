@@ -1,26 +1,9 @@
 \secrel{Установка}\label{pyinst}\secdown
 
-\begin{description}
-    \item{типовой интерпретатор $CPython^3$} \url{https://www.python.org/downloads}
-    \item{IDE среда разработки} \url{https://code.visualstudio.com/}
-\end{description}
-
-\begin{verbatim}
-~/cansat_samara$ sudo apt install python3
-\end{verbatim}
-или \emph{полный комплект разработчика CanSat} (GNU/\linux):
-\begin{verbatim}
-~/cansat_samara$ sudo apt install -u `cat apt.txt`
-\end{verbatim}
+\secrel{Виртуальная среда \py\ (venv)}
 
 \noindent
-После установки интерпретатора в \win\ прописать в \menu{Пуск>Компьютер>\rms>Параметры>Другие параметры}
-значение переменной среды \var{PATH}:
-\begin{verbatim}
-PATH=C:\Python;C:\MinGW\bin;C:\MinGW\msys\1.0\bin;%PATH%
-\end{verbatim}
-
-\secrel{Установка виртуальной среды \py}
+ВС позволяет сделать копию интерпретатора \py\ \emph{отдельно для одного проекта}: со своим набором настроек и модулей (библиотек).
 
 \begin{verbatim}
 ~/cansat_samara$ python3 -m venv ~/cansat_samara
@@ -29,17 +12,20 @@ PATH=C:\Python;C:\MinGW\bin;C:\MinGW\msys\1.0\bin;%PATH%
 (venv)$ bin/pip3 install -r requirements.txt
 \end{verbatim}
 
-\begin{description}
+\begin{description}[nosep]
     \item{\emph{pyserial}}  последовательный порт \ref{pyserial}
     \item{\emph{numpy}}     численные методы
     \item{\emph{graphviz}}  отрисовка графов \ref{graph}
     \item{\emph{ply}}       написание парсеров текстовых данных \ref{ply}
 \end{description}
 
+\clearpage
 \secrel{Дополнительные пакеты}
 
+При необходимости дополнительные пакеты устанавливаются вручную из командной строки:
+
 \begin{verbatim}
-    ~/cansat_samara$ . ~/cansat_samara/bin/activate
+~/cansat_samara$ . ~/cansat_samara/bin/activate
 (venv)$ bin/pip3 install jupyter ...
 \end{verbatim}
 

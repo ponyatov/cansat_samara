@@ -1,0 +1,17 @@
+\subsecly{Запуск \win\ программ под \linux\ через WINE}
+
+В некоторых случаях приходится использовать эмуляцию \win, запущенную под \linux:
+не только для запуска некоторых программ, для которых нет аналогов, но и для проблемных компиляций (LLVM),
+и кросс-разработки сразу под несколько платформ.
+
+\bigskip \url{https://habr.com/ru/post/162171/}
+
+\begin{verbatim}
+$ wine ~/Загрузки/mingw-get-setup.exe
+$ wine msiexec /i ~/Загрузки/python-3.4.3.msi
+$ wine python --version
+Python 3.4.3
+$ wine explorer
+$ wine cmd
+Z:\home\ponyatov> ^C
+\end{verbatim}

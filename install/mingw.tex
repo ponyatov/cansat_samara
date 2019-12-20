@@ -1,0 +1,45 @@
+\clearpage
+\subsecly{\mingw\ компилятор GNU \ci/\cpp}
+
+\url{http://www.mingw.org/download/installer}
+
+\bigskip
+установка: \url{https://www.youtube.com/watch?v=YiLklxw_NNY}
+
+\bigskip
+установите в \file{C:/MinGW}
+
+\bigskip\noindent
+\emph{важно: при установке программ никогда не используйте пути с пробелами, кириллицу, знаки препинания, математические и т.п.} (\verb|[a-zA-Z0-9_]+|)
+
+\begin{itemize}
+\item \menu{\file{mingw-get-setup.exe}>Install}
+\item \menu{Installation Directory>\file{C:/MinGW}>Continue>...download...>Continue}
+\item \menu{Installation>Update Catalogue>...>Close}
+\clearpage
+\item \menu{Basic Setup>\rms>Mark for Installation>\lms}
+\begin{verbatim}
+    mingw32-base-bin
+    mingw32-gcc-g++-bin
+    msys-base-bin
+\end{verbatim}
+\item \menu{All Packages>\rms\rms\rms>}
+\begin{verbatim}
+    mingw32-make-bin
+    msys-bison-bin
+    msys-flex-bin
+    msys-wget-bin
+\end{verbatim}
+\item \menu{Installation>Mark All Upgrades}
+\item \menu{Installation>Apply Changes>Apply>...>Close}
+\end{itemize}
+
+\clearpage
+\paragraph{под \linux:}
+\begin{verbatim}
+~/cansat_samara$ sudo apt install gcc g++ 
+\end{verbatim}
+или \emph{полный комплект разработчика CanSat} (GNU/\linux):
+\begin{verbatim}
+~/cansat_samara$ sudo apt install -u `cat apt.txt`
+\end{verbatim}

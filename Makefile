@@ -7,6 +7,8 @@ REL = $(shell git rev-parse --short=4 HEAD)
 
 TEX  = $(MODULE).tex header.tex
 TEX += bib.tex
+TEX += install/install.tex install/git.tex install/mingw.tex install/python.tex
+TEX += install/env.tex install/vscode.tex install/wine.tex
 TEX += cansat/cansat.tex 
 TEX += python/python.tex python/install.tex python/hello.tex python/serial.tex
 TEX += embed/embed.tex emc/emc.tex linux/linux.tex
@@ -53,7 +55,7 @@ vscode: .vscode/settings.json
 requirements.txt:
 	bin/pip3 freeze | grep -v 0.0.0 > $@
 
-MERGE  = Makefile README.md .gitignore apt.txt
+MERGE  = Makefile README.md .gitignore apt.txt install.bat update.bat
 MERGE += $(TEX) $(SRC) $(IMG)
 
 merge:
