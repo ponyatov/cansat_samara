@@ -20,27 +20,32 @@
 PATH=C:\Python;C:\MinGW\bin;C:\MinGW\msys\1.0\bin;%PATH%
 \end{verbatim}
 
-\secrel{Установка виртуальной среды \py\ для отдельного проекта}
+\secrel{Установка виртуальной среды \py}
 
 \begin{verbatim}
 ~/cansat_samara$ python3 -m venv ~/cansat_samara
 ~/cansat_samara$ . ~/cansat_samara/bin/activate
-
-(venv)$ pip install -U pip
-(venv)$ pip install -r requirements.txt
+(venv)$ bin/pip3 install -U pip
+(venv)$ bin/pip3 install -r requirements.txt
 \end{verbatim}
 
 \begin{description}
-    \item{\file{numpy}}     численные методы
-    \item{\file{graphviz}}  отрисовка графов
-    \item{\file{ply}}       написание парсеров текстовых данных
+    \item{\emph{pyserial}}  последовательный порт \ref{pyserial}
+    \item{\emph{numpy}}     численные методы
+    \item{\emph{graphviz}}  отрисовка графов \ref{graph}
+    \item{\emph{ply}}       написание парсеров текстовых данных \ref{ply}
 \end{description}
 
-опции:
+\secrel{Дополнительные пакеты}
+
+\begin{verbatim}
+    ~/cansat_samara$ . ~/cansat_samara/bin/activate
+(venv)$ bin/pip3 install jupyter ...
+\end{verbatim}
 
 \begin{description}
-    \item{\file{jupyter}}   Jupyter Notebook: рабочая среда в браузере
-    \item{\file{flask}}     Web-фреймворк и сервер для сетевых приложений
+    \item{\emph{jupyter}}   Jupyter Notebook: рабочая среда в браузере \ref{jupyter}
+    \item{\emph{flask}}     Web-фреймворк и сервер для сетевых приложений \ref{flask}
 \end{description}
     
 \secup

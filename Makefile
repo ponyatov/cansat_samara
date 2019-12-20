@@ -10,6 +10,7 @@ TEX += bib.tex
 TEX += cansat/cansat.tex 
 TEX += python/python.tex python/install.tex python/hello.tex python/serial.tex
 TEX += embed/embed.tex emc/emc.tex linux/linux.tex
+TEX += python/jupyter.tex python/ply.tex python/flask.tex
 
 SRC  = apt.txt requirements.txt
 SRC += python/hello.py python/hello.sh python/hello.out
