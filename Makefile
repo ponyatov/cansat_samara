@@ -8,8 +8,10 @@ REL = $(shell git rev-parse --short=4 HEAD)
 TEX  = $(MODULE).tex header.tex
 TEX += bib.tex
 TEX += cansat/cansat.tex 
-TEX += python/python.tex python/serial
-TEX += embed/embed.tex
+TEX += python/python.tex python/install.tex python/hello.tex python/serial.tex
+TEX += embed/embed.tex emc/emc.tex linux/linux.tex
+
+SRC += python/hello.py python/hello.sh python/hello.out
 
 LATEX = pdflatex -halt-on-error
 
@@ -26,6 +28,9 @@ $(MODULE)_$(NOW)-$(REL).pdf: $(MODULE).pdf Makefile
 
 dot/%.png: dot/%.dot
 	dot -Tpng -o $@ $<
+
+python/%.out: python/%.py
+	python3 $< > $@
 
 clean:
 	rm *.log *.aux *.toc
