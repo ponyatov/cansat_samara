@@ -46,3 +46,6 @@ vscode: .vscode/settings.json
 .vscode/settings.json: $(VSCsettings)
 	cp $< $@
 
+.PHONY: requirements.txt
+requirements.txt:
+	bin/pip3 freeze | grep -v 0.0.0 > $@
