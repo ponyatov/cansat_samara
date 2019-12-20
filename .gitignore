@@ -5,3 +5,10 @@
 *.toc
 *.out
 *.pdf
+
+bin/
+lib/
+lib64
+include/
+share/
+pyvenv.cfg
