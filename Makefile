@@ -13,11 +13,13 @@ TEX += embed/embed.tex emc/emc.tex linux/linux.tex
 TEX += python/jupyter.tex python/ply.tex python/flask.tex
 
 SRC  = apt.txt requirements.txt
-SRC += python/hello.py python/hello.sh python/hello.out
+SRC += python/hello.py python/hello.sh
+
+OUT  = python/hello.out
 
 LATEX = pdflatex -halt-on-error
 
-$(MODULE).pdf: $(TEX) $(SRC) $(IMG)
+$(MODULE).pdf: $(TEX) $(SRC) $(IMG) $(OUT)
 	$(LATEX) $< | tail -n7
 	$(LATEX) $< | tail -n7
 	# $(LATEX) $<
@@ -50,3 +52,19 @@ vscode: .vscode/settings.json
 .PHONY: requirements.txt
 requirements.txt:
 	bin/pip3 freeze | grep -v 0.0.0 > $@
+
+MERGE  = Makefile README.md .gitignore apt.txt
+MERGE += $(TEX) $(SRC) $(IMG)
+
+merge:
+	git checkout master
+	git checkout shadow -- $(MERGE)
+
+release: pdf
+	git tag $(NOW)-$(REL)
+	git push -v && git push -v --tags
+	git checkout shadow
+
+zip: $(MODULE)_$(NOW)-$(REL).zip
+$(MODULE)_$(NOW)-$(REL).zip:
+	git archive --format zip --output $@ HEAD
