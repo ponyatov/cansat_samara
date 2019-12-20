@@ -1,0 +1,7 @@
+python3
+gcc
+g++
+make
+git
+wget
+graphviz
