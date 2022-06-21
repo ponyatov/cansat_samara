@@ -1,4 +1,4 @@
 graphviz==0.13.2
-numpy==1.17.4
+numpy==1.22.0
 ply==3.11
 pyserial==3.4
